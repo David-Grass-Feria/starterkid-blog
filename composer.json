@@ -1,0 +1,40 @@
+{
+    "name": "grass-feria/starterkid-blog",
+    "description": "Tester for starterkid",
+    "homepage":"https://google.com",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "David Grass Feria",
+        "email": "kontakt@david-grass-feria.de"
+      }
+    ],
+   
+    "autoload": {
+      
+      "psr-4": {
+        "GrassFeria\\StarterkidBlog\\": "src",
+        "GrassFeria\\StarterkidBlog\\Database\\Factories\\": "database/factories/",
+        "GrassFeria\\StarterkidBlog\\Database\\Migrations\\": "database/migrations/",
+        "GrassFeria\\StarterkidBlog\\Database\\Seeders\\": "database/seeders/"
+      }
+    },
+    
+    "extra": {
+      "thumb-name":"Starterkid Blog",
+      "thumb-vendor":"Grass Feria",
+      "logo-url":"/starterkid-blog.png",
+      "starterkid": {
+        "providers": [
+          "GrassFeria\\StarterkidBlog\\Providers\\AppServiceProvider"
+        ]
+        
+      }
+     
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+      "grass-feria/starterkid": "dev-main"
+  }
+  }
