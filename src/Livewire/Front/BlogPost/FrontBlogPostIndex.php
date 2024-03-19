@@ -14,13 +14,23 @@ class FrontBlogPostIndex extends Component
 
    
    use LivewireIndexTrait;
+
+   public $robots;
+
+   public function mount()
+   {
+    
+    
+    
+
+   }
   
   
     #[Layout('starterkid-frontend::components.layouts.front')]
     public function render()
     {
      
-      $blogposts = \GrassFeria\StarterkidBlog\Models\BlogPost::frontGetBlogPostWhereStatusIsOnline($this->search,$this->orderBy, $this->sort)->get();
+      $blogposts = \GrassFeria\StarterkidBlog\Models\BlogPost::frontGetBlogPostWhereStatusIsOnline($this->search,$this->orderBy, $this->sort)->simplePaginate(config('starterkid-blog.blog_post_pagination'));
       $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline($this->search,$this->orderBy, $this->sort)->get();
       return view('starterkid-blog::livewire.front.blog-post.front-blog-post-index',['services' => $services,'blogposts' => $blogposts]);
 

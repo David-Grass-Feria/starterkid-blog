@@ -20,6 +20,7 @@ class BlogPostEdit extends Component
     public $preview;
     public $author;
     public $public_images = [];
+    public $image_credits;
     
     
 
@@ -40,7 +41,8 @@ class BlogPostEdit extends Component
         $this->status                           = $this->blogpost->status;
         $this->slug                             = $this->blogpost->slug;
         $this->author                           = $this->blogpost->author;
-            
+        $this->image_credits                    = $this->blogpost->image_credits;
+
        
     }
 
@@ -57,6 +59,7 @@ class BlogPostEdit extends Component
             'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
             'status'                    => 'required|boolean',
             'author'                    => 'required|string',
+            'image_credits'             => 'nullable|string',
            
         ]);
         

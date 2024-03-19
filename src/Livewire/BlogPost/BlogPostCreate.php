@@ -20,6 +20,7 @@ class BlogPostCreate extends Component
     public $slug;
     public $preview;
     public $author;
+    public $image_credits;
     public $public_images = [];
     
     
@@ -32,6 +33,7 @@ class BlogPostCreate extends Component
         $this->authorize('create',\GrassFeria\StarterkidBlog\Models\BlogPost::class);
         $this->published                              = now()->format(config('starterkid.time_format.date_time_format_for_picker'));
         $this->author                                 = auth()->user()->name;
+        $this->image_credits                          = url('/');
         
     }
 
@@ -54,6 +56,7 @@ class BlogPostCreate extends Component
             'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
             'status'                    => 'required|boolean',
             'author'                    => 'required|string',
+            'image_credits'             => 'nullable|string',
            
         ]);
         

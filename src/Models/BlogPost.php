@@ -25,7 +25,8 @@ class BlogPost extends Model implements HasMedia
         'published',
         'status',
         'slug',
-        'author'
+        'author',
+        'image_credits',
     ];
 
 
@@ -73,7 +74,7 @@ class BlogPost extends Model implements HasMedia
 
     public function scopeFrontGetBlogPostWhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'id', $sort = 'asc'): \Illuminate\Database\Eloquent\Builder
     {
-        $query = $query->select('id', 'name', 'title', 'published', 'status', 'slug', 'preview','author')
+        $query = $query->select('id', 'name', 'title', 'published', 'status', 'slug', 'preview','author','image_credits')
             ->where('status', true);
 
         if (!empty($search)) {
@@ -98,6 +99,7 @@ class BlogPost extends Model implements HasMedia
               ->width(config('starterkid.spatie_conversions.large.size'));
         $this->addMediaConversion(config('starterkid.spatie_conversions.medium.name'))
               ->width(config('starterkid.spatie_conversions.medium.size'));
+              
               
     }
 }

@@ -27,7 +27,7 @@
                 </x-slot>
                 </x-starterkid::starterkid.form.file>
                 <livewire-starterkid::show-image key="public_images_{{$blogpost->id}}" :record="$blogpost" collection="images" divClass="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-1 mt-5 mb-5" imgClass="h-32" />
-
+                <x-starterkid::starterkid.form.text wire:model="image_credits" for="image_credits" id="image_credits" type="text" label="{{__('Image credits')}}"  />
                 <x-starterkid::starterkid.form.datetime wire:model="published" for="published" id="published" label="{{__('Published')}}" required />
                 <x-starterkid::starterkid.form.select wire:model="author" for="author" id="author" label="{{__('Author')}}" placeholder="{{__('Choose your author')}}" required>
                 @foreach($authors as $author)

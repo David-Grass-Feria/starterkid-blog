@@ -22,6 +22,7 @@ return new class extends Migration
             $table->boolean('status')->default(true);
             $table->text('preview')->nullable();
             $table->text('author');
+            $table->string('image_credits')->nullable();
             //$table->string('title');
             //$table->string('color');
             //$table->string('range');
