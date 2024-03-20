@@ -17,14 +17,6 @@ class FrontBlogPostIndex extends Component
 
    public $robots;
 
-   public function mount()
-   {
-    
-    
-    
-
-   }
-  
   
     #[Layout('starterkid-frontend::components.layouts.front')]
     public function render()
