@@ -27,9 +27,7 @@
             <x-starterkid-frontend::card-grid>
             
             @foreach($blogposts as $blogpost)
-           <x-starterkid-frontend::post-card name="{{$blogpost->name}}" linkRoute="{{route('front.blog-post.show',$blogpost->slug)}}" linkTitle="{{$blogpost->name}}" buttonText="{{__('More info')}}" description="{!!$blogpost->preview!!}" imgSrc="{{$blogpost->getFirstMediaUrl('images',config('starterkid.spatie_conversions.medium.name'))}}" imgAlt="{{$blogpost->name}}" imageCredits="{{$blogpost->image_credits}}">
-        
-        </x-starterkid-frontend::post-card>
+           <x-starterkid-frontend::post-card :model="$blogpost" name="{{$blogpost->name}}" linkRoute="{{route('front.blog-post.show',$blogpost->slug)}}" linkTitle="{{$blogpost->name}}" buttonText="{{__('More info')}}" description="{!!$blogpost->preview!!}" imgSrc="{{$blogpost->getFirstMediaUrl('images',config('starterkid.spatie_conversions.medium.name'))}}" imgAlt="{{$blogpost->name ?? ''}}" imageCredits="{{$blogpost->image_credits}}" />
             @endforeach
 
             

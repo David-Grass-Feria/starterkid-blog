@@ -33,7 +33,7 @@ class BlogPostCreate extends Component
         $this->authorize('create',\GrassFeria\StarterkidBlog\Models\BlogPost::class);
         $this->published                              = now()->format(config('starterkid.time_format.date_time_format_for_picker'));
         $this->author                                 = auth()->user()->name;
-        $this->image_credits                          = url('/');
+        
         
     }
 
