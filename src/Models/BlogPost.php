@@ -2,14 +2,15 @@
 
 namespace GrassFeria\StarterkidBlog\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use App\Models\User;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\Image\Enums\CropPosition;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class BlogPost extends Model implements HasMedia
 {
@@ -93,12 +94,13 @@ class BlogPost extends Model implements HasMedia
 
     public function registerMediaConversions(?Media $media = null): void
     {
-        $this->addMediaConversion(config('starterkid.spatie_conversions.small.name'))
-              ->width(config('starterkid.spatie_conversions.small.size'));
-        $this->addMediaConversion(config('starterkid.spatie_conversions.large.name'))
-              ->width(config('starterkid.spatie_conversions.large.size'));
-        $this->addMediaConversion(config('starterkid.spatie_conversions.medium.name'))
-              ->width(config('starterkid.spatie_conversions.medium.size'));
+        $this->addMediaConversion('thumb')
+              ->width(200);
+        $this->addMediaConversion('medium')
+              ->width(800);
+        $this->addMediaConversion('large')
+              ->width(1200);
+        
               
               
     }

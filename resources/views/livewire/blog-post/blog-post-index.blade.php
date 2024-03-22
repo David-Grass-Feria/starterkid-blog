@@ -48,8 +48,8 @@
                 </x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>{{$blogpost->id}}</x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>
-                    @if($blogpost->getFirstMediaUrl('images',config('starterkid.spatie_conversions.small.name')))
-                    <img src="{{$blogpost->getFirstMediaUrl('images',config('starterkid.spatie_conversions.small.name'))}}" alt="{{$blogpost->name}}" class="h-12 w-auto" />
+                    @if($blogpost->getFirstMediaUrl('images','thumb'))
+                    <img src="{{$blogpost->getFirstMediaUrl('images','thumb')}}" alt="{{$blogpost->name}}" class="h-12 w-auto" />
                     @endif
                 </x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>{{$blogpost->name}}</x-starterkid::starterkid.td>
