@@ -21,7 +21,7 @@
                 {!!$blogpost->preview!!}
                 </x-starterkid::starterkid.form.ckeditor5>
                 
-                <x-starterkid::starterkid.form.file name="public_images" wire:model="public_images" for="public_images" id="public_images" label="{{__('Post image')}}" maxFileSize="{{config('starterkid.max_file_size_mb')}}MB" maxTotalFileSize="{{config('starterkid.max_file_size_mb')}}MB" required >
+                <x-starterkid::starterkid.form.file name="public_images" wire:model="public_images" for="public_images" id="public_images" label="{{__('Post image')}}" maxFileSize="{{config('starterkid.max_file_size_mb')}}MB" maxTotalFileSize="{{config('starterkid.max_file_size_mb')}}MB">
                 <x-slot name="acceptedFileTypes">
                 'image/*'
                 </x-slot>
