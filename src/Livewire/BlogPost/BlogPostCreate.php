@@ -16,7 +16,7 @@ class BlogPostCreate extends Component
     public $title;
     public $content;
     public $created_at;
-    public $status = false;
+    public $status = true;
     public $slug;
     public $preview;
     public $author;
