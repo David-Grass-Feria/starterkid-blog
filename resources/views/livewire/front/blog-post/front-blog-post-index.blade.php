@@ -42,7 +42,7 @@
                     <div class="absolute inset-0 rounded-t-3xl ring-1 ring-inset ring-gray-900/10"></div>
                     <x-starterkid-frontend::image-credits imageCredits="{{$blogpost->image_credits}}"/>
                   </div>
-                  <div class="w-full text-font_primary hover:bg-primary hover:text-white rounded-b-3xl p-3">
+                  <div class="w-full text-font_primary bg-white shadow-lg border border-b rounded-b-3xl p-3">
                     <div class="mt-8 flex items-center gap-x-4 text-xs">
                       <time datetime="{{$blogpost->getPublished()}}">{{$blogpost->getPublished()}}</time>
                       <p>{{$blogpost->author}}</p>
