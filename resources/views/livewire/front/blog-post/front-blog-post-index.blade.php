@@ -31,18 +31,18 @@
                 
                 
                 @foreach($blogposts as $blogpost)
-                <article class="flex flex-col items-start justify-between">
+                <article class="flex flex-col items-start justify-between bg-white shadow-md rounded-3xl border border-gray-400">
                   <div class="relative w-full">
                     @if (!empty($blogpost->getFirstMediaUrl('images', 'medium')))
-                    <img src="{{$blogpost->getFirstMediaUrl('images','medium')}}" alt="{{$blogpost->name}}" class="w-full rounded-t-3xl object-cover aspect-[2/2] lg:aspect-[3/3]">
+                    <img src="{{$blogpost->getFirstMediaUrl('images','medium')}}" alt="{{$blogpost->name}}" class="w-full object-cover rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]">
                     
                     @else
-                    <img src="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" alt="{{$blogpost->name}}" class="w-full rounded-t-3xl object-contain aspect-[2/2] lg:aspect-[3/3]">
+                    <img src="{{Cache::has('logo') ? Cache::get('logo') : asset('/logo.png')}}" alt="{{$blogpost->name}}" class="w-full object-contain rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]">
                     @endif
-                    <div class="absolute inset-0 rounded-t-3xl ring-1 ring-inset ring-gray-900/10"></div>
+                    
                     <x-starterkid-frontend::image-credits imageCredits="{{$blogpost->image_credits}}"/>
                   </div>
-                  <div class="w-full text-font_primary bg-white shadow-lg border border-b rounded-b-3xl p-3">
+                  <div class="w-full text-font_primary p-3">
                     <div class="mt-8 flex items-center gap-x-4 text-xs">
                       <time datetime="{{$blogpost->getPublished()}}">{{$blogpost->getPublished()}}</time>
                       <p>{{$blogpost->author}}</p>
