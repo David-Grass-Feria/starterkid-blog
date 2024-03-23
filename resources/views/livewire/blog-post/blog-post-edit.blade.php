@@ -31,7 +31,7 @@
                 <x-starterkid::starterkid.form.datetime wire:model="published" for="published" id="published" label="{{__('Published')}}" required />
                 <x-starterkid::starterkid.form.select wire:model="author" for="author" id="author" label="{{__('Author')}}" placeholder="{{__('Choose your author')}}" required>
                 @foreach($authors as $author)
-                <option value="{{$author->id}}">{{$author->name}}</option>
+                <option value="{{$author->name}}">{{$author->name}}</option>
                 @endforeach
                 </x-starterkid::starterkid.form.select>
                 <x-starterkid::starterkid.form.checkbox for="status" id="status" label="{{__('Status')}}">
