@@ -31,7 +31,7 @@
                 
                 
                 @foreach($blogposts as $blogpost)
-                <article class="flex flex-col items-start justify-between bg-white shadow-md rounded-3xl border border-gray-400">
+                <article class="flex flex-col items-start justify-between bg-white rounded-3xl border border-gray-400">
                   <div class="relative w-full">
                     @if (!empty($blogpost->getFirstMediaUrl('images', 'medium')))
                     <img src="{{$blogpost->getFirstMediaUrl('images','medium')}}" alt="{{$blogpost->name}}" class="w-full object-cover rounded-t-3xl aspect-[2/2] lg:aspect-[3/3]">
