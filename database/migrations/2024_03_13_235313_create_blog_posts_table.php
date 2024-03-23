@@ -21,7 +21,7 @@ return new class extends Migration
             $table->dateTime('published');
             $table->boolean('status')->default(true);
             $table->text('preview')->nullable();
-            $table->text('author');
+            $table->string('author');
             $table->string('image_credits')->nullable();
             //$table->string('title');
             //$table->string('color');
