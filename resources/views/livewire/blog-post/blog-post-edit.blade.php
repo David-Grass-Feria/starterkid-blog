@@ -30,6 +30,7 @@
                 <x-starterkid::starterkid.form.text wire:model="image_credits" for="image_credits" id="image_credits" type="text" label="{{__('Image credits')}}"  />
                 <x-starterkid::starterkid.form.datetime wire:model="created_at" for="created_at" id="created_at" label="{{__('Published')}}" required />
                 <x-starterkid::starterkid.form.select wire:model="author" for="author" id="author" label="{{__('Author')}}" placeholder="{{__('Choose your author')}}" required>
+                <option selected value="null">{{__('Choose a author')}}</option>
                 @foreach($authors as $author)
                 <option value="{{$author->name}}">{{$author->name}}</option>
                 @endforeach
