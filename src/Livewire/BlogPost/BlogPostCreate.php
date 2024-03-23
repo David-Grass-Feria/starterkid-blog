@@ -78,7 +78,7 @@ class BlogPostCreate extends Component
     public function render()
     {
         
-        $authors = \App\Models\User::query()->select('id','name','role')->where('role','editor')->orWhere('role','admin')->orWhere('role',config('starterkid.global_admin'))->get();
+        $authors = \App\Models\User::query()->select('id','name','role')->where('role','editor')->orWhere('role','admin')->get();
         return view('starterkid-blog::livewire.blog-post.blog-post-create',['authors' => $authors]);
         
     }
