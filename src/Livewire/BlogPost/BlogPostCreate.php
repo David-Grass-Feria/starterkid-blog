@@ -32,7 +32,7 @@ class BlogPostCreate extends Component
         
         $this->authorize('create',\GrassFeria\StarterkidBlog\Models\BlogPost::class);
         $this->created_at                              = now()->format(config('starterkid.time_format.date_time_format_for_picker'));
-        $this->author                                 = auth()->user()->name;
+        
         
         
     }
