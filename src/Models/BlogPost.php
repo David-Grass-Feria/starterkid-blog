@@ -23,7 +23,7 @@ class BlogPost extends Model implements HasMedia
         'title',
         'preview',
         'content',
-        'published',
+        'created_at',
         'status',
         'slug',
         'author',
@@ -33,7 +33,7 @@ class BlogPost extends Model implements HasMedia
 
     protected $casts = [
 
-        'published' => 'datetime',
+        
         'status' => 'boolean',
 
     ];
@@ -50,7 +50,7 @@ class BlogPost extends Model implements HasMedia
 
     public function getPublished()
     {
-        return $this->published->format(config('starterkid.time_format.date_time_format'));
+        return $this->created_at->format(config('starterkid.time_format.date_time_format'));
     }
     
     protected function name(): Attribute
@@ -73,9 +73,9 @@ class BlogPost extends Model implements HasMedia
          });
     }
 
-    public function scopeFrontGetBlogPostWhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'published', $sort = 'desc'): \Illuminate\Database\Eloquent\Builder
+    public function scopeFrontGetBlogPostWhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'created_at', $sort = 'desc'): \Illuminate\Database\Eloquent\Builder
     {
-        $query = $query->select('id', 'name', 'title', 'published', 'status', 'slug', 'preview','author','image_credits')
+        $query = $query->select('id', 'name', 'title', 'created_at', 'status', 'slug', 'preview','author','image_credits')
             ->where('status', true);
 
         if (!empty($search)) {
@@ -87,7 +87,7 @@ class BlogPost extends Model implements HasMedia
             });
         }
 
-        $query->orderBy('published', 'desc');
+        $query->orderBy($orderBy, $sort);
 
         return $query;
     }

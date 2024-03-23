@@ -14,7 +14,7 @@ class BlogPostEdit extends Component
     public $name;
     public $title;
     public $content;
-    public $published;
+    public $created_at;
     public $status = false;
     public $slug;
     public $preview;
@@ -37,7 +37,7 @@ class BlogPostEdit extends Component
         $this->title                            = $this->blogpost->title;
         $this->content                          = $this->blogpost->content;
         $this->preview                          = $this->blogpost->preview;
-        $this->published                        = $this->blogpost->published->format(config('starterkid.time_format.date_time_format_for_picker'));
+        $this->created_at                        = $this->blogpost->created_at->format(config('starterkid.time_format.date_time_format_for_picker'));
         $this->status                           = $this->blogpost->status;
         $this->slug                             = $this->blogpost->slug;
         $this->author                           = $this->blogpost->author;
@@ -56,7 +56,7 @@ class BlogPostEdit extends Component
             'title'                     => 'required|string',
             'content'                   => 'required|string',
             'preview'                   => 'nullable|string',
-            'published'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
+            'created_at'                 => 'required|date_format:' . config('starterkid.time_format.date_time_format_for_picker'),
             'status'                    => 'required|boolean',
             'author'                    => 'required|string',
             'image_credits'             => 'nullable|string',

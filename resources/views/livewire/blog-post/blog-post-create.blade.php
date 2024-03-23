@@ -29,7 +29,7 @@
                 <x-starterkid::starterkid.form.slug wire:model="slug" slug="{{url('/')}}/{{config('starterkid-blog.blog_post_slug')}}/" for="slug" id="slug" type="text" label="{{__('Slug')}}" required/>
                
                 
-                <x-starterkid::starterkid.form.datetime wire:model="published" for="published" id="published" label="{{__('Published')}}" required />
+                <x-starterkid::starterkid.form.datetime wire:model="created_at" for="created_at" id="created_at" label="{{__('Published')}}" required />
                 <x-starterkid::starterkid.form.select wire:model="author" for="author" id="author" label="{{__('Author')}}" placeholder="{{__('Choose your author')}}" required>
                 @foreach($authors as $author)
                 <option value="{{$author->name}}">{{$author->name}}</option>

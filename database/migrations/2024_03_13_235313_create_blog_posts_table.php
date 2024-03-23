@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->longText('content');
-            $table->dateTime('published');
             $table->boolean('status')->default(true);
             $table->text('preview')->nullable();
             $table->string('author');
