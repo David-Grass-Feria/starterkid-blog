@@ -87,7 +87,7 @@ class BlogPost extends Model implements HasMedia
             });
         }
 
-        $query->orderBy($orderBy, $sort);
+        $query->orderBy('published', 'desc');
 
         return $query;
     }
