@@ -43,7 +43,7 @@
     },
     "datePublished": "{{$blogpost->getPublished()}}",
     "dateModified": "{{$blogpost->getPublished()}}",
-    "description": "{{$blogpost->preview ?? ''}}"
+    "description": "{!!$blogpost->preview ?? ''!!}"
   }
 </script>
 @endsection
