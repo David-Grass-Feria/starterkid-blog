@@ -56,7 +56,7 @@
                 <x-starterkid::starterkid.td>{{$blogpost->getPublished()}}</x-starterkid::starterkid.td>
                 <x-starterkid::starterkid.td>
                     @if($blogpost->status === true)
-                    <a target="_blank" href="#" title="{{__('View')}}">
+                    <a target="_blank" href="{{route('front.blogpost.show',$blogpost->slug)}}" title="{{$blogpost->name}}">
                         <x-starterkid::starterkid.button-secondary type="button">{{__('View')}}</x-starterkid::starterkid.button-secondary>
                     </a>
                     @endif
