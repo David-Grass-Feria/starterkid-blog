@@ -66,12 +66,12 @@ class BlogPost extends Model implements HasMedia
         parent::boot();
 
         static::updated(function ($model) {
-           \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-blog.blog_post_slug').'/'.$model->slug);
+           //
           
            
         });
         static::deleted(function ($model) {
-            \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('starterkid-blog.blog_post_slug').'/'.$model->slug);
+            //
            
        
          });
