@@ -66,12 +66,20 @@ class BlogPost extends Model implements HasMedia
         parent::boot();
 
         static::updated(function ($model) {
-           //
+            $url = route('front.blog-post.show', ['slug' => $model->slug]);
+            $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
+            \Illuminate\Support\Facades\Cache::forget($cacheKey);
+            $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
+            \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
           
            
         });
         static::deleted(function ($model) {
-            //
+            $url = route('front.blog-post.show', ['slug' => $model->slug]);
+            $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
+            \Illuminate\Support\Facades\Cache::forget($cacheKey);
+            $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
+            \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
            
        
          });
@@ -80,6 +88,7 @@ class BlogPost extends Model implements HasMedia
     public function scopeFrontGetBlogPostWhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'created_at', $sort = 'desc'): \Illuminate\Database\Eloquent\Builder
     {
         $query = $query->select('id', 'name', 'title', 'created_at', 'status', 'slug', 'preview','author','image_credits')
+            ->with('media')
             ->where('status', true);
 
         if (!empty($search)) {

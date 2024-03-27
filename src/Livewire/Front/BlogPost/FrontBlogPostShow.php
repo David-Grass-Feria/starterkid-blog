@@ -16,7 +16,9 @@ class FrontBlogPostShow extends Component
    
    public function mount($slug)
    {
+      
       $this->blogpost = \GrassFeria\StarterkidBlog\Models\BlogPost::where('slug',$slug)->firstOrFail();
+      
    }
   
   
@@ -24,7 +26,7 @@ class FrontBlogPostShow extends Component
     public function render()
     {
      
-      $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline()->get();
+      $services =\GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline()->get();
       return view('starterkid-blog::livewire.front.blog-post.front-blog-post-show',['services' => $services]);
 
         
