@@ -5,10 +5,10 @@ namespace GrassFeria\StarterkidBlog\Livewire\Front\BlogPost;
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Lazy;
 
 
-#[Lazy]
+
+
 class FrontBlogPostShow extends Component
 {
 
