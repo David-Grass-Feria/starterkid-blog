@@ -12,9 +12,9 @@
       
     <x-starterkid-frontend::wrapper>
    
-  
+    
     <x-starterkid-frontend::body-content heading="{{$blogpost->name}}" content="{!!$blogpost->content!!}" imgSrc="{{$blogpost->getFirstMediaUrl('images','large')}}" imgSrcMedium="{{$blogpost->getFirstMediaUrl('images','medium')}}" imgAlt="{{$blogpost->name}}" imageCredits="{{$blogpost->image_credits}}" dateTime="{{$blogpost->getPublished()}}" author="{{$blogpost->author}}"  />
-
+   
     
       
     </x-starterkid-frontend::wrapper>
