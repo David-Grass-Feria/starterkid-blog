@@ -110,11 +110,11 @@ class BlogPost extends Model implements HasMedia
         $this->addMediaConversion('thumb')
               ->width(200);
         $this->addMediaConversion('medium')
-              ->width(500)
-              ->quality(80);
+              ->width(300)
+              ->sharpen(10);
        $this->addMediaConversion('large')
-              ->width(900)
-              ->quality(80);
+              ->width(600)
+              ->sharpen(10);
               
         
               
