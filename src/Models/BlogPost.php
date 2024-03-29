@@ -108,17 +108,17 @@ class BlogPost extends Model implements HasMedia
     public function registerMediaConversions(?Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-              ->width(100)
-              ->sharpen(10)
-              ->quality(80);
+              ->width(config('starterkid.image_conversions.thumb.width'))
+              ->sharpen(config('starterkid.image_conversions.thumb.sharpen'))
+              ->quality(config('starterkid.image_conversions.thumb.quality'));
         $this->addMediaConversion('medium')
-              ->width(300)
-              ->sharpen(10)
-              ->quality(80);
+              ->width(config('starterkid.image_conversions.medium.width'))
+              ->sharpen(config('starterkid.image_conversions.medium.sharpen'))
+              ->quality(config('starterkid.image_conversions.medium.quality'));
        $this->addMediaConversion('large')
-              ->width(600)
-              ->sharpen(10)
-              ->quality(80);
+              ->width(config('starterkid.image_conversions.large.width'))
+              ->sharpen(config('starterkid.image_conversions.large.sharpen'))
+              ->quality(config('starterkid.image_conversions.large.quality'));
               
         
               
