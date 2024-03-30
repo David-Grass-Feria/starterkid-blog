@@ -25,10 +25,12 @@
         </x-slot>
     
        
-                
+            
                 <x-starterkid-frontend::card-grid>
+                    
                 @foreach($blogposts as $blogpost)
-               <x-starterkid-frontend::card-grid-blogpost-item 
+              
+               <x-starterkid-frontend::card-grid-blogpost-item
                imgSrc="{{$blogpost->getFirstMediaUrl('images', 'large')}}"
                imgSrcMedium="{{$blogpost->getFirstMediaUrl('images','medium')}}" 
                imgAlt="{{$blogpost->name}}" 
@@ -39,10 +41,11 @@
                preview="{!!Str::limit($blogpost->preview,200)!!}" 
                href="{{route('front.blog-post.show',$blogpost->slug)}}" 
                hrefTitle="{{$blogpost->name}}" />
+                
                 @endforeach
                 
               </x-starterkid-frontend::card-grid>
-
+           
                  
          
           
