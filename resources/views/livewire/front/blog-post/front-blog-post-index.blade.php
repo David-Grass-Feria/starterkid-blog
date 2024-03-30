@@ -31,8 +31,7 @@
                 @foreach($blogposts as $blogpost)
               
                <x-starterkid-frontend::card-grid-blogpost-item
-               imgSrc="{{$blogpost->getFirstMediaUrl('images', 'large')}}"
-               imgSrcMedium="{{$blogpost->getFirstMediaUrl('images','medium')}}" 
+               imgSrc="{{$blogpost->getFirstMediaUrl('images', 'medium')}}"
                imgAlt="{{$blogpost->name}}" 
                imgCredits="{{$blogpost->image_credits}}" 
                dateTime="{{$blogpost->getPublished()}}" 
