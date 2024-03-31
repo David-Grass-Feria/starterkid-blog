@@ -24,8 +24,8 @@ use GrassFeria\StarterkidBlog\Livewire\Front\BlogPost\FrontBlogPostIndex;
 
 Route::middleware(['web'])->group(function () {
    
-    Route::get(config('starterkid-blog.blog_post_slug'),FrontBlogPostIndex::class)->name('front.blog-post.index')->middleware(['minify']);
-    Route::get(config('starterkid-blog.blog_post_slug').'/{slug}',FrontBlogPostShow::class)->name('front.blog-post.show')->middleware(['minify','cache']);
+    Route::get(config('starterkid-blog.blog_post_slug'),FrontBlogPostIndex::class)->name('front.blog-post.index')->middleware('minify');
+    Route::get(config('starterkid-blog.blog_post_slug').'/{slug}',FrontBlogPostShow::class)->name('front.blog-post.show')->middleware('cache','minify');
   
 
    
