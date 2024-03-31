@@ -1,6 +1,6 @@
 <x-slot:title>{{$blogpost->name}}</x-slot>
 <x-slot:robots>index, follow</x-slot>
-<x-slot:description>{!!$blogpost->preview ?? ''!!}</x-slot>
+<x-slot:description>{{ strip_tags($blogpost->preview) ?? '' }}</x-slot>
 
 <div>
     @include('starterkid-frontend::header')
