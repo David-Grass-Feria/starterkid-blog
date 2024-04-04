@@ -30,7 +30,7 @@
                     
                 @foreach($blogposts as $blogpost)
               
-               <x-starterkid-frontend::card-grid-blogpost-item
+               <x-starterkid-frontend::card-grid-blogpost-item wire:navigate
                imgSrc="{{$blogpost->getFirstMediaUrl('images', 'medium')}}"
                imgAlt="{{$blogpost->name}}" 
                imgCredits="{{$blogpost->image_credits}}" 
