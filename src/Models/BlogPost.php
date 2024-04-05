@@ -69,6 +69,10 @@ class BlogPost extends Model implements HasMedia
             $url = route('front.blog-post.show', ['slug' => $model->slug]);
             $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
             \Illuminate\Support\Facades\Cache::forget($cacheKey);
+
+            $cacheKeyBlogIndex = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.blog-post.index'));
+            \Illuminate\Support\Facades\Cache::forget($cacheKeyBlogIndex);
+            
             $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
             \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
           
@@ -78,6 +82,10 @@ class BlogPost extends Model implements HasMedia
             $url = route('front.blog-post.show', ['slug' => $model->slug]);
             $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
             \Illuminate\Support\Facades\Cache::forget($cacheKey);
+
+            $cacheKeyBlogIndex = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.blog-post.index'));
+            \Illuminate\Support\Facades\Cache::forget($cacheKeyBlogIndex);
+            
             $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
             \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
            
