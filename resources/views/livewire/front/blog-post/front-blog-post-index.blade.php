@@ -39,7 +39,9 @@
                heading="{{$blogpost->name}}" 
                preview="{!!Str::limit($blogpost->preview,200)!!}" 
                href="{{route('front.blog-post.show',$blogpost->slug)}}" 
-               hrefTitle="{{$blogpost->name}}" />
+               hrefTitle="{{$blogpost->name}}"
+               hrefAnchor="{{__('Read more')}}"  
+               />
                 
                 @endforeach
                 
