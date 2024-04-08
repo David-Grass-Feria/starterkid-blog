@@ -92,6 +92,9 @@ class BlogPost extends Model implements HasMedia
          });
     }
 
+
+    
+
     public function scopeFrontGetBlogPostWhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'created_at', $sort = 'desc'): \Illuminate\Database\Eloquent\Builder
     {
         $query = $query->select('id', 'name', 'title', 'created_at', 'status', 'slug', 'preview','author','image_credits')
