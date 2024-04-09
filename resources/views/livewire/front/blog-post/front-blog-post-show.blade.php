@@ -51,3 +51,11 @@
     
     @include('starterkid-frontend::footer',['services' => $services])
 </div>
+
+@section('meta')
+<meta property="og:title" content="{{$blogpost->name}}" />
+<meta property="og:description" content="{{ strip_tags($blogpost->preview) ?? '' }}" />
+<meta property="og:image" content="{{$blogpost->getFirstMediaUrl('images','large') ?? ''}}" />
+<meta property="og:url" content="{{url()->current()}}" />
+<meta property="og:type" content="website" />
+@endsection
