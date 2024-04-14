@@ -4,6 +4,7 @@ namespace GrassFeria\StarterkidBlog\Livewire\BlogPost;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 
 class BlogPostEdit extends Component
@@ -79,6 +80,27 @@ class BlogPostEdit extends Component
         return redirect()->route('blogposts.index')->with('success', __('BlogPost updated'));
 
     }
+
+    public function removeFile($fileId)
+    {
+       
+        // delete files if click delete button on filepond form
+        
+        // public_images
+         Storage::delete('livewire-tmp'.'/'.$fileId);
+         foreach($this->public_images as $key => $file){
+           if($file->getFilename() == $fileId){
+             unset($this->public_images[$key]);
+           }
+         }
+
+        
+
+         // more here
+ 
+    }
+
+    
     public function render()
     {
         $authors = \App\Models\User::query()->select('id','name','role')->where('role','editor')->orWhere('role','admin')->get();
