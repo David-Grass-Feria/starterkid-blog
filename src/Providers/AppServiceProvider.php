@@ -21,6 +21,9 @@ class AppServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../../config/starterkid-blog.php', 'starterkid-blog'
         );
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/front-navlink.php', 'starterkid-blog-front-navlink'
+        );
         
     }
 
