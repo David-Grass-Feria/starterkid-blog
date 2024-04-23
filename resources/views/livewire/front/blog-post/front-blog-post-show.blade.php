@@ -1,4 +1,4 @@
-<x-slot:title>{{$blogpost->name}}</x-slot>
+<x-slot:title>{{$blogpost->title}}</x-slot>
 <x-slot:robots>index, follow</x-slot>
 <x-slot:description>{{ strip_tags($blogpost->preview) ?? '' }}</x-slot>
 
