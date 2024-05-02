@@ -7,7 +7,7 @@
                 </x-slot>
                 <x-starterkid::starterkid.form cancelRoute="{{route('blogposts.index')}}">
                 
-                <x-starterkid::starterkid.form.text wire:model.live="name" for="name" id="name" type="text" label="{{__('Name')}}" required/>
+                <x-starterkid::starterkid.form.text wire:model.live="name" for="name" id="name" type="text" label="{{__('Heading')}}" required/>
                 <x-starterkid::starterkid.form.ckeditor5 wire:model="content" for="content" id="content" rows="5" label="{{__('Content')}}" required>
                 </x-starterkid::starterkid.form.ckeditor5>
                 
