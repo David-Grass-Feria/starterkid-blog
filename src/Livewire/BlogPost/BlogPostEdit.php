@@ -4,6 +4,7 @@ namespace GrassFeria\StarterkidBlog\Livewire\BlogPost;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -53,7 +54,7 @@ class BlogPostEdit extends Component
 
         $validated = $this->validate([
             'name'                      => 'required|string',
-            'slug'                      => 'required|string',
+            'slug'                      => ['required', 'string', Rule::unique('blog_posts')->ignore($this->blogpost->id)],
             'title'                     => 'required|string',
             'content'                   => 'required|string',
             'preview'                   => 'nullable|string',

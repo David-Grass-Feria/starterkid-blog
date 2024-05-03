@@ -50,7 +50,7 @@ class BlogPostCreate extends Component
 
         $validated = $this->validate([
             'name'                      => 'required|string',
-            'slug'                      => 'required|string',
+            'slug'                      => 'required|string|unique:blog_posts',
             'title'                     => 'required|string',
             'content'                   => 'required|string',
             'preview'                   => 'nullable|string',
