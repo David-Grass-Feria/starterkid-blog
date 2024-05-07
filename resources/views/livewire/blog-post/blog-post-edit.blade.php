@@ -9,7 +9,7 @@
                 
                 <x-starterkid::starterkid.form.text wire:model="name" for="name" id="name" type="text" label="{{__('Heading')}}" required/>
                 <x-starterkid::starterkid.form.text wire:model="title" for="title" id="title" type="text" label="{{__('Title')}}" required/>
-                <x-starterkid::starterkid.form.text wire:model="slug" for="slug" id="slug" type="text" label="{{__('Slug')}}" required/>
+              
               
                 <x-starterkid::starterkid.form.ckeditor5 wire:model="content" for="content" id="content" rows="5" label="{{__('Content')}}" required>
                 {!!$blogpost->content!!}

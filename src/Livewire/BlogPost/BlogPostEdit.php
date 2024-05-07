@@ -18,7 +18,6 @@ class BlogPostEdit extends Component
     public $content;
     public $created_at;
     public $status = false;
-    public $slug;
     public $preview;
     public $author;
     public $public_images = [];
@@ -41,7 +40,6 @@ class BlogPostEdit extends Component
         $this->preview                          = $this->blogpost->preview;
         $this->created_at                        = $this->blogpost->created_at->format(config('starterkid.time_format.date_time_format_for_picker'));
         $this->status                           = $this->blogpost->status;
-        $this->slug                             = $this->blogpost->slug;
         $this->author                           = $this->blogpost->author;
         $this->image_credits                    = $this->blogpost->image_credits;
 
@@ -54,7 +52,6 @@ class BlogPostEdit extends Component
 
         $validated = $this->validate([
             'name'                      => 'required|string',
-            'slug'                      => ['required', 'string', Rule::unique('blog_posts')->ignore($this->blogpost->id)],
             'title'                     => 'required|string',
             'content'                   => 'required|string',
             'preview'                   => 'nullable|string',
