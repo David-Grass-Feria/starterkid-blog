@@ -83,10 +83,7 @@ class BlogPost extends Model implements HasMedia
            
         });
 
-        // stop if cache is false
-        if(config('starterkid-frontend.frontend_cache') == false){
-            return;
-        }
+       
         static::deleted(function ($model) {
             $url = route('front.blog-post.show', ['slug' => $model->slug]);
             $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
